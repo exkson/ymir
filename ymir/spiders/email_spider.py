@@ -43,9 +43,6 @@ class EmailSpider(scrapy.Spider):
             }
 
     def get_queries(self):
-        queries = [
-            "how to get rich fast",
-            "ecommerce courses",
-            "finance courses",
-        ]
+        with open("datasets/queries.txt") as f:
+            queries = f.readlines()
         yield from queries
